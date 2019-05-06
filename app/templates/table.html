@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Dropdown Navigation Bar</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="{{url_for('static',filename='js/relScript.js')}}"></script>
+ <!-- <script  src="js/index.js"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+  
+</head>
+
+<body>
+
+  <section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="#!">Alzheimer's Detection</a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="#!">Home</a>
+        </li>
+        <li>
+          <a href="#!">About Us</a>
+        </li>
+        
+        <li>
+          <a href="#!">Log In</a>
+        </li>
+        <li>
+          <a href="#!">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+
+<table>
+  <tr>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>EDUC</th>
+    <th>SES</th>
+    <th>MMSE</th>
+    <th>eTIV</th>
+    <th>nWBV</th>
+    <th>ASF</th>
+    <th>Original Diagnosis</th>
+    <th>Prediction</th>
+  </tr>
+  {% for item in data %}
+   {%if item["green"]%}<tr style = "background-color: green"> {%else%} <tr style = "background-color: red" > {%endif%}
+    <td>{{item["Gender"]}}</td>
+    <td>{{item["Age"]}}</td>
+    <td>{{item["EDUC"]}}</td>
+    <td>{{item["SES"]}}</td>
+    <td>{{item["MMSE"]}}</td>
+    <td>{{item["eTIV"]}}</td>
+    <td>{{item["nWBV"]}}</td>
+    <td>{{item["ASF"]}}</td>
+    <td>{{item["Group"]}}</td>
+    <td>{{item["Prediction"]}}</td>
+  </tr>
+  {% endfor %}
+   
+</table>
+
+</body>
+
+</html>
