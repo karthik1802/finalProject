@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dataset = pd.read_csv(r"oasis_longitudinal.csv")
+dataset = pd.read_csv("oasis_longitudinal.csv")
 
 dataset['SES'].fillna((dataset['SES'].median()),inplace=True)
 dataset['MMSE'].fillna((dataset['MMSE'].median()),inplace=True)
