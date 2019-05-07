@@ -26,7 +26,7 @@
       <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
       <ul class="nav-list">
         <li>
-          <a href="#!">Home</a>
+          <a href="{{url_for('index')}}">Home</a>
         </li>
         <li>
           <a href="#!">About Us</a>
@@ -42,8 +42,8 @@
     </nav>
   </div>
 </section>
-<h1>Model Trained and predicted is <b>{{model}}</b></h1>
-<h3>Accuracy of the model is : {{accur}}</h3>
+<h1 style="color:white">Model Trained and predicted is <b>{{model}}</b></h1>
+<h3 style="color:white">Accuracy of the model is : {{accur}}</h3>
 
 <table>
   <tr>

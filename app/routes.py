@@ -169,7 +169,7 @@ def ann():
     #####RESULTS######
     # best_parameters: {'batch_size': 1, 'epochs': 100, 'optimizer': 'rmsprop'}
 
-    # best_accuracy: 0.978021978022
+    # best_accuracy: 0.958021978022
 
 
     classifier = Sequential() # Initialising the ANN
