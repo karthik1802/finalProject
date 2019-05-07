@@ -16,7 +16,7 @@
 </head>
 
 <body>
-
+  <h1>File Upload was sucessful</h1>
   <section class="navigation">
   <div class="nav-container">
     <div class="brand">
@@ -48,21 +48,21 @@
     <b><u>Support Vector Machine</u></b>
   </div>
   <img  class="img1" src="/static/download.png">
-  <button class="check">Check</button>
+  <a href="{{url_for('svm')}}" style="color: white"><h4>Check</h4></a>
 </div>
 <div class="category">
   <div class="category1">
     <b><u>Artifical Neural Network</u></b>
   </div>
   <img  class="img1" src="/static/download (1).png">
-  <button class="check">Check</button>
+  <a href="{{url_for('ann')}}" style="color: white"><h4>Check</h4></a>
 </div>
 <div class="category">
   <div class="category1">
     <b>&nbsp;&nbsp;&nbsp;<u>Bayesian Classifier</u></b>
   </div>
   <img  class="img1" src="/static/download (2).png">
-  <button class="check">Check</button>
+  <a href="{{url_for('bayesian')}}" style="color: white"><h4>Check</h4></a>
 </div>
 
 </body>
