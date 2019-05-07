@@ -130,9 +130,9 @@ def ann():
     
     X_train, X_test = train_test_split(data,test_size=0.5, random_state=0)
     
-    # sc=StandardScaler()
-    # x_train=sc.fit_transform(X_train)
-    # x_test=sc.transform(X_test)
+    sc=StandardScaler()
+    x_train=sc.fit_transform(X_train[used_features])
+    x_test=sc.transform(X_test[used_features])
 
     # I already found out the tuned hyper parameters so commenting the code.
 
@@ -181,14 +181,15 @@ def ann():
 
     classifier.compile(optimizer = 'rmsprop', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-    classifier.fit(X_train[used_features].values, X_train["Group_C"], batch_size = 1, epochs = 100)
+    classifier.fit(x_train, X_train["Group_C"], batch_size = 1, epochs = 100)
 
-    y_pred=classifier.predict(X_test[used_features])
+    y_pred=classifier.predict(x_test)
     # classifier.fit(x_test,y_test,batch_size=2,nb_epoch=100)
     tableData = []
     i = 0
     print(y_pred)
     tr=0
+    a = False
     for index, row in X_test.iterrows():
         dic = dict(row)
         print(row[0])
@@ -202,7 +203,7 @@ def ann():
         i = i+1
         tableData.append(dic)
     # return("Done")
-    return render_template("table.html", data=tableData, green=dic["green"], model="Artificial Neural Network", accur=100*(tr/i))
+    return render_template("ann.html", data=tableData, green=dic["green"], model="Artificial Neural Network", accur=100*(tr/i))
 
 
 @app.route('/table', methods = ['GET', 'POST'])
